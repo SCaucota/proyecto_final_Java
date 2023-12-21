@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Compra Tickets</title>
+<title>Cargando Informacion</title>
 </head>
 <body>
 
@@ -14,11 +14,11 @@
 	String nombre = request.getParameter("nombre");
 	String apellido = request.getParameter("apellido");
 	String mail = request.getParameter("mail");
-	int cantidad = Integer.parseInt(request.getParameter("cantidad"));
-	String categoria = request.getParameter("categoria");
-	int total = Integer.parseInt(request.getParameter("total"));
+	int telefono = Integer.parseInt(request.getParameter("telefono"));
+	String tema = request.getParameter("tema");
+	String descripcion = request.getParameter("descripcion");
 	
-	String sql = "INSERT INTO ticket(nombre, apellido, mail, cantidad, categoria, total) VALUES('"+nombre+"','"+apellido+"', '"+mail+"', '"+cantidad+"', '"+categoria+"', '"+total+"')";
+	String sql = "INSERT INTO orador(nombre, apellido, mail, telefono, tema, descripcion) VALUES('"+nombre+"','"+apellido+"', '"+mail+"', '"+telefono+"', '"+tema+"', '"+descripcion+"')";
 	
 	Connection cn = MySqlConexion.conectar();
 	
@@ -26,14 +26,16 @@
 		Statement stm = cn.createStatement();
 		
 		stm.executeUpdate(sql);
+		
+		stm.close();
+		cn.close();
 	}catch(Exception e){
 		out.println("No se enviaron los datos");
 		e.printStackTrace();
 	}
 	
+	response.sendRedirect("listaOradores.jsp");
 %>
-
-<jsp:include page = "resumenCompra.jsp"></jsp:include>
 
 </body>
 </html>

@@ -136,6 +136,10 @@
     margin-bottom: 2%;
 }
 
+#btn-oradores{
+	margin-top: 2rem;
+}
+
 /*SECTION 3*/
 .container-section-3{
     display: grid;
@@ -151,6 +155,10 @@
 
 .div-img-honolulu img{
     width: 100%;
+}
+
+.section-3{
+	margin-top: 4.5rem;
 }
 
 /*SECTION 4*/
@@ -187,15 +195,13 @@
 
 .div-nombre-apellido{
     display: flex;
+    gap: 20px;
 }
 
 .inputs-form{
     width: 50%;
 }
 
-.input-nombre{
-    margin-right: 6%;
-}
 
 .div-nombre-apellido input{
     width: 100%;
@@ -203,6 +209,12 @@
 
 #correo{
 	margin-bottom: 2%;
+}
+
+.container-buttons-oradores{
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+	gap: 20px;
 }
 
 /*FOOTER*/
@@ -352,7 +364,7 @@
 
 /*--------COMPRAR TICKETS--------*/
 
-.main-tickets{
+.main-style{
     margin: 5% 20% 5% 20%;
 }
 
@@ -516,4 +528,96 @@
 
 .btn-resumen{
 	width: 100%;
+}
+
+
+/*OTROS ORADORES*/
+.main-oradores{
+	margin: 2rem 0rem 5rem 0rem;
+}
+
+.oradores-section{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.div-btn-admin{
+	width: 100%;
+	display: flex;
+	justify-content: end;
+	padding-right: 2rem;
+}
+
+.btn-warning{
+	width: auto;
+	padding: 0.5rem 1rem;
+	font-size: 1rem;
+	font-weight: 400;
+}
+
+.nombreOrador{
+	text-align: center;
+}
+
+.div-aprobados{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2rem;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 2rem;
+	
+}
+
+.aprobados-titulo{
+	margin-bottom: 1rem;
+}
+
+.div-no-aprobados{
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 2rem;
+}
+
+.div-btn-votar{
+	display: flex;
+	justify-content: center;
+}
+
+/*LISTA ORADORES ADMIN*/
+.main-lista-oradores{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.tabla-container{
+	margin-top: 2rem;
+	margin-bottom: 6rem;
+}
+
+.descripcion{
+	max-width: 700px;
+    word-wrap: break-word;
+}
+
+.footer-lista-oradores{
+	position: fixed;
+  	bottom: 0;
+  	width: 100%;
+  	height: 85px;
+  	background: rgb(90,124,161);
+  	background: linear-gradient(257deg, rgba(90,124,161,1) 9%, rgba(52,79,108,1) 61%);
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	flex-wrap: wrap;
+}
+
+.footer-lista-oradores a{
+    color: white;
+    text-decoration: none;
 }

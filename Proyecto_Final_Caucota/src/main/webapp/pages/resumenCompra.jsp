@@ -45,40 +45,41 @@
             </div>
         </nav>
     </header>
-    <main class="main-tickets" >
+    <main class="main-style" >
         <section class="resumen-section" >
         	<h2>Resumen de Compra</h2>
-        	<div class="container-datos-resumen" >
-        		<div class="datos-resumen">
-        			<h4>Nombre: </h4>
-        			<p><%= request.getParameter("nombre") %></p>
-        		</div>
-        		<div class="datos-resumen">
-        			<h4>Apellido: </h4>
-        			<p><%= request.getParameter("apellido") %></p>
-        		</div>
-        		<div class="datos-resumen">
-        			<h4>Correo: </h4>
-        			<p><%= request.getParameter("mail") %></p>
-        		</div>
-        		<div class="datos-resumen">
-        			<h4>Cantidad De Tickets: </h4>
-        			<p><%= request.getParameter("cantidad") %></p>
-        		</div>
-        		<div class="datos-resumen">
-        			<h4>Categoría: </h4>
-        			<p><%= request.getParameter("categoria") %></p>
-        		</div>
-        		<div class="datos-resumen">
-        			<h3>Total: </h3>
-        			<p>$<%= request.getParameter("total") %></p>
-        		</div>
-        	</div>
-        	<div class="container_buttons">
-        		<button type="button" id="borrar" class="btn btn-resumen btn-success" >Eliminar</button>
-                <button type="submit" id="modificar" class="btn btn-resumen btn-success" >Modificar</button>
-                <button type="button" id="comprar" class="btn btn-resumen btn-success" >Confirmar</button>
-        	</div>
+    		<form action="modificarTicket.jsp" method="post">
+	        	<div class="container-datos-resumen" >
+	        		<div class="datos-resumen">
+	        			<h4>Nombre: </h4>
+	        			<p name="nombre"><%= request.getParameter("nombre") %></p>
+	        		</div>
+	        		<div class="datos-resumen">
+	        			<h4>Apellido: </h4>
+	        			<p name="apellido"><%= request.getParameter("apellido") %></p>
+	        		</div>
+	        		<div class="datos-resumen">
+	        			<h4>Correo: </h4>
+	        			<p name="mail"><%= request.getParameter("mail") %></p>
+	        		</div>
+	        		<div class="datos-resumen">
+	        			<h4>Cantidad De Tickets: </h4>
+	        			<p name="cantidad"><%= request.getParameter("cantidad") %></p>
+	        		</div>
+	        		<div class="datos-resumen">
+	        			<h4>Categoría: </h4>
+	        			<p name="categoria"><%= request.getParameter("categoria") %></p>
+	        		</div>
+	        		<div class="datos-resumen">
+	        			<h3>Total: </h3>
+	        			<p name="total">$<%= request.getParameter("total") %></p>
+	        		</div>
+	        	</div>
+	        	<div class="container_buttons">
+	        		<button type="button" onclick="location.href='desactivarTicket.jsp'" id="borrar" class="btn btn-resumen btn-success" >Eliminar</button>
+	                <button type="submit" id="modificar" class="btn btn-resumen btn-success" >Modificar</button>
+	        	</div>
+	        </form>
         </section>
     </main>
     <footer class="footer">
@@ -98,8 +99,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
         crossorigin="anonymous"></script>
-        
-    <script src="../js/app.js" ></script>
 </body>
 
 </html>

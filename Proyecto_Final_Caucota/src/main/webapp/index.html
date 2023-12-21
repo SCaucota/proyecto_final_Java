@@ -107,9 +107,12 @@
                     </div>
                 </div>
             </div>
+            <div>
+            	<button type="button" onclick="location.href='./pages/listaOradores.jsp'"  id="btn-oradores" class="btn btn-dark" >Otros Oradores</button>
+            </div>
         </section>
 
-        <section>
+        <section class="section-3">
             <div id="lugarFecha" class="container-section-3">
                 <div class="div-img-honolulu">
                     <img src="./img/honolulu.jpg" alt="">
@@ -133,20 +136,34 @@
                 <h4>ORADOR</h4>
                 <p>Anótate como orador para dar una charla ignite. Cuéntanos de qué quieres hablar!</p>
             </div>
-            <form class="form-orador" action="">
+            <form id="form" action="./pages/cargaFormOrador.jsp" class="form-orador">
                 <div class="div-nombre-apellido">
-                    <div class="mb-3 input-nombre inputs-form ">
-                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Nombre">
+                    <div id="div-input-nombre" class="mb-3 inputs-form ">
+                        <input type="text" name="nombre" class="form-control" id="nombreInputOrador" placeholder="Nombre">
                     </div>
-                    <div class="mb-3 inputs-form">
-                        <input type="text" class="form-control " id="exampleInputPassword1" placeholder="Apellido">
+                    <div id="div-input-apellido"  class="mb-3 inputs-form">
+                        <input type="text" name="apellido" class="form-control " id="apellidoInputOrador" placeholder="Apellido">
                     </div>
                 </div>
-                <div class="mb-3">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Sobre qué quieres hablar?"></textarea>
+                <div class="div-nombre-apellido">
+                    <div id="div-input-email"  class="mb-3 inputs-form ">
+                        <input type="text" name="mail" class="form-control" id="emailInputOrador" placeholder="Email">
+                    </div>
+                    <div id="div-input-telefono"  class="mb-3 inputs-form">
+                        <input type="text" name="telefono" class="form-control " id="telInputOrador" placeholder="Teléfono">
+                    </div>
+                </div>
+                <div id="div-input-tema"  class="mb-3">
+                    <input type="text" name="tema" class="form-control " id="temaInputOrador" placeholder="Tema">
+                </div>
+                <div id="div-textarea-desc"  class="mb-3">
+                    <textarea class="form-control" name="descripcion" id="descTextOrador" rows="3" placeholder="Sobre qué quieres hablar?"></textarea>
                     <div id="emailHelp" class="form-text">Recuerda incluir un título para tu charla</div>
                 </div>
-                <button type="submit" class="btn btn-success">Enviar</button>
+                <div class="container-buttons-oradores">
+                	<button type="reset" class="btn btn-success">Borrar</button>
+                	<button type="button" id="button_enviar_oradores" class="btn btn-success">Enviar</button>
+                </div>
             </form>
         </section>
     </main>
@@ -165,6 +182,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>
+    <script src="./js/index.js" ></script>
 </body>
 
 </html>

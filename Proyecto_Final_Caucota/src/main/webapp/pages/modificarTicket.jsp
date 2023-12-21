@@ -33,7 +33,7 @@
                             <a class="nav-link" href="#">El lugar y la fecha</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Convi√©rtete en orador</a>
+                            <a class="nav-link" href="#">ConviÈrtete en orador</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link menu-verde" href="./comprarTickets.html">Comprar tickets</a>
@@ -49,47 +49,47 @@
                 <h2>Estudiante</h2>
                 <h5>Tienen un descuento</h5>
                 <h3>80%</h3>
-                <p>*presentar documentaci√≥n</p>
+                <p>*presentar documentaciÛn</p>
             </div>
         
             <div class="descuento trainee">
                 <h2>Trainee</h2>
                 <h5>Tienen un descuento</h5>
                 <h3>50%</h3>
-                <p>*presentar documentaci√≥n</p>
+                <p>*presentar documentaciÛn</p>
             </div>
         
             <div class="descuento junior">
                 <h2>Junior</h2>
                 <h5>Tienen un descuento</h5>
                 <h3>15%</h3>
-                <p>*presentar documentaci√≥n</p>
+                <p>*presentar documentaciÛn</p>
             </div>
         </section>
         <section class="venta-tickets-section" >
             <p>VENTA</p>
             <h1>VALOR DE TICKET $200</h1>
-            <form id="form" action="cargaFormTicket.jsp" class="contenedor-form" >
+            <form id="form" action="cambiarInfoTicket.jsp" class="contenedor-form" >
                 <div class="dos-elementos" >
                     <div id="divNombre">
-                        <input id="nombre" name="nombre" type="text" placeholder="Nombre">
+                        <input id="nombre" value="<%= request.getParameter("nombre") %>" name="nombre" type="text" placeholder="Nombre">
                     </div>
                     <div id="divApellido">
-                        <input id="apellido" name="apellido" type="text" placeholder="Apellido">
+                        <input id="apellido" value="<%= request.getParameter("apellido") %>"name="apellido" type="text" placeholder="Apellido">
                     </div>
                     
                 </div>
                 <div id="divCorreo">
-                    <input id="correo" name="mail" type="email" placeholder="Correo">
+                    <input id="correo" value="<%= request.getParameter("mail") %>" name="mail" type="email" placeholder="Correo">
                 </div>
                 <div class="dos-elementos">
                     <div id="divCantidad" >
                         <label for="cantidad">Cantidad</label>
-                        <input id="cantidad" name="cantidad" type="number" placeholder="Cantidad">
+                        <input id="cantidad" value="<%= request.getParameter("cantidad") %>" name="cantidad" type="number" placeholder="Cantidad">
                     </div>
                     <div id="divCategoria" >
-                        <label for="categoria">Categor√≠a</label>
-                        <select name="categoria" id="categorias">
+                        <label for="categoria">CategorÌa</label>
+                        <select name="categoria" value="<%= request.getParameter("categoria") %>" id="categorias">
                         	<option value="0" selected>Elegir...</option>
                             <option value="Estudiante">Estudiante</option>
                             <option value="Trainee">Trainee</option>
@@ -105,17 +105,17 @@
                 	<button type="button" id="resumen" class="btn btn-success" >Resumen</button>
             	</div>
             	<div class="container-button-comprar">
-            		<button type="button" id="comprar" class="btn btn-success" >Comprar</button>
+            		<button type="submit" class="btn btn-success" >Modificar</button>
             	</div>
             </form>
         </section>
     </main>
     <footer class="footer">
         <a class="a-footer" href="#">Preguntas frecuentes</a>
-        <a class="a-footer" href="#">Conct√°nos</a>
+        <a class="a-footer" href="#">Conct·nos</a>
         <a class="a-footer" href="#">Prensa</a>
         <a class="a-footer" href="#">Conferencias</a>
-        <a class="a-footer" href="#">T√©rminos y condiciones</a>
+        <a class="a-footer" href="#">TÈrminos y condiciones</a>
         <a class="a-footer" href="#">Privacidad</a>
         <a class="a-footer-estudiantes" href="#">Estudiantes</a>
     </footer>
