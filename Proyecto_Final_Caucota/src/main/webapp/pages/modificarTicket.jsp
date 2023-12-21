@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page import = "pf.integrador.java.MySqlConexion" %>
+<%@ page import = "java.sql.*" %>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -44,6 +47,20 @@
         </nav>
     </header>
     <main class="main-style" >
+    <%
+	    Connection cn = null;
+	    PreparedStatement ps = null;
+	    ResultSet rs = null;
+	    
+		try{
+	 
+			cn = MySqlConexion.conectar();
+			
+			ps = cn.prepareStatement("SELECT * FROM ticket WHERE id = (SELECT MAX(id) FROM ticket)");
+	 
+			rs = ps.executeQuery();
+			
+	%>
         <section class="descuentos-section">
             <div class="descuento estudiante">
                 <h2>Estudiante</h2>
@@ -69,34 +86,36 @@
         <section class="venta-tickets-section" >
             <p>VENTA</p>
             <h1>VALOR DE TICKET $200</h1>
-            <form id="form" action="cambiarInfoTicket.jsp" class="contenedor-form" >
+            <form id="form" action="cambiarInfoTicket.jsp" class="contenedor-form">
+            <%if(rs.next()){%>
                 <div class="dos-elementos" >
                     <div id="divNombre">
-                        <input id="nombre" value="<%= request.getParameter("nombre") %>" name="nombre" type="text" placeholder="Nombre">
+                        <input id="nombre" value="<%= rs.getString("nombre") %>" name="nombre" type="text" placeholder="Nombre">
                     </div>
                     <div id="divApellido">
-                        <input id="apellido" value="<%= request.getParameter("apellido") %>"name="apellido" type="text" placeholder="Apellido">
+                        <input id="apellido" value="<%= rs.getString("apellido") %>"name="apellido" type="text" placeholder="Apellido">
                     </div>
                     
                 </div>
                 <div id="divCorreo">
-                    <input id="correo" value="<%= request.getParameter("mail") %>" name="mail" type="email" placeholder="Correo">
+                    <input id="correo" value="<%= rs.getString("mail") %>" name="mail" type="email" placeholder="Correo">
                 </div>
                 <div class="dos-elementos">
                     <div id="divCantidad" >
                         <label for="cantidad">Cantidad</label>
-                        <input id="cantidad" value="<%= request.getParameter("cantidad") %>" name="cantidad" type="number" placeholder="Cantidad">
+                        <input id="cantidad" value="<%= rs.getInt("cantidad") %>" name="cantidad" type="number" placeholder="Cantidad">
                     </div>
                     <div id="divCategoria" >
                         <label for="categoria">Categoría</label>
-                        <select name="categoria" value="<%= request.getParameter("categoria") %>" id="categorias">
-                        	<option value="0" selected>Elegir...</option>
+                        <select name="categoria" id="categorias">
+                        	<option value="0" selected><%= rs.getString("categoria") %></option>
                             <option value="Estudiante">Estudiante</option>
                             <option value="Trainee">Trainee</option>
                             <option value="Junior">Junior</option>
                         </select>
                     </div>
                 </div>
+            <%} %>
                 <div class="total" >
                 	Total a Pagar: <span id="total" ></span>
             	</div>
@@ -109,6 +128,25 @@
             	</div>
             </form>
         </section>
+    <%
+    } catch (Exception e) {
+        e.printStackTrace();
+    } finally {
+        try {
+            if (rs != null) {
+                rs.close();
+            }
+            if (ps != null) {
+                ps.close();
+            }
+            if (cn != null) {
+                cn.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+	%>
     </main>
     <footer class="footer">
         <a class="a-footer" href="#">Preguntas frecuentes</a>

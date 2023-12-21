@@ -70,7 +70,7 @@ function verificacion() {
     if(categoriaSelect.value === "0"){
         console.log(categoriaSelect.value);
 		isValid = false;
-		categoriaError.textContent = "Elija una categoría";
+		categoriaError.textContent = "Elija una categoria";
 		categoriaError.style.color = "red";
 		divCategoria.appendChild(categoriaError);
 	}else {

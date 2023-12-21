@@ -76,9 +76,10 @@
 	        		</div>
 	        	</div>
 	        	<div class="container_buttons">
-	        		<button type="button" onclick="location.href='desactivarTicket.jsp'" id="borrar" class="btn btn-resumen btn-success" >Eliminar</button>
+	        		<button type="button" onclick="eliminarTicket()" id="borrar" class="btn btn-resumen btn-success" >Eliminar</button>
 	                <button type="submit" id="modificar" class="btn btn-resumen btn-success" >Modificar</button>
 	        	</div>
+	        	<button type="button" onclick="finalizarCompra()" id="finalizar" class="btn btn-resumen btn-success" >Finalizar</button>
 	        </form>
         </section>
     </main>
@@ -99,6 +100,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
         crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/resumenCompra.js" ></script>
 </body>
 
 </html>

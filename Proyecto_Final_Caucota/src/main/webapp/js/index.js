@@ -78,7 +78,7 @@ function verificacion() {
         divTelInput.appendChild(telError);
 	}else if (!numerosExpresion.test(telInput.value)) {
         isValid = false;
-        telError.textContent = 'Teléfono inválido';
+        telError.textContent = 'Telefono inválido';
         telError.style.color = "red";
         divTelInput.appendChild(telError);
     } else {

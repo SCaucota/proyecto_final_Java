@@ -35,6 +35,7 @@
 		}
 		
 	}catch(Exception e){
+		out.println("No funcionó");
 		e.printStackTrace();
 	}
 %>
